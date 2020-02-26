@@ -9,7 +9,10 @@ describe('Game', function() {
     name: 'Player 2',
     sign: 'O'
   }
-  var board = []
+  var board = [
+    ['', '', ''],
+    ['', '', ''],
+    ['', '', '']]
 
   beforeEach(function() {
     game = new Game(playerOne, playerTwo, board);
@@ -53,6 +56,16 @@ describe('Game', function() {
     it('second turn is playerTwo turn', function() {
       game.changeTurn()
       expect(game.selectPlayer()).toEqual(playerTwo)
+    })
+  })
+
+  describe('insertMove', function() {
+    it('let you insert a move as the correct player', function() {
+      expect(game.insertMove(0, 0)).toEqual('X')
+      game.changeTurn()
+      expect(game.insertMove(0, 1)).toEqual('O')
+      game.changeTurn()
+      expect(game.insertMove(1, 0)).toEqual('X')
     })
   })
 });
