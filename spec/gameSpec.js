@@ -21,7 +21,7 @@ describe('Game', function() {
     });
   
     it('can increment turn', function() {
-      expect(game.changeTurn()).toEqual(playerTwo);
+      expect(game.changeTurn()).toEqual(1);
     });
   });
 
@@ -42,6 +42,17 @@ describe('Game', function() {
   describe('board', function() {
     it('should have a board', function() {
       expect(game.board).toBeInstanceOf(Array)
+    })
+  })
+
+  describe('selectPlayer', function() {
+    it('first turn is playerOne turn', function() {
+      expect(game.selectPlayer()).toEqual(playerOne)
+    })
+
+    it('second turn is playerTwo turn', function() {
+      game.changeTurn()
+      expect(game.selectPlayer()).toEqual(playerTwo)
     })
   })
 });
