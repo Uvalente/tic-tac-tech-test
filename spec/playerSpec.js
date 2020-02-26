@@ -3,10 +3,14 @@ describe("Player", function() {
   var player;
 
   beforeEach(function() {
-    player = new Player('Player 1');
+    player = new Player('Player 1', 'X');
   });
 
-  it("should be have a name", function() {
+  it("should have a name", function() {
     expect(player.name).toEqual('Player 1');
+  });
+
+  it("should have a sign", function() {
+    expect(player.sign).toEqual('X');
   });
 });
