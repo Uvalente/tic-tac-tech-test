@@ -9,9 +9,10 @@ describe('Game', function() {
     name: 'Player 2',
     sign: 'O'
   }
+  var board = []
 
   beforeEach(function() {
-    game = new Game(playerOne, playerTwo);
+    game = new Game(playerOne, playerTwo, board);
   });
 
   describe('turn', function() {
@@ -38,4 +39,9 @@ describe('Game', function() {
     });
   });
   
+  describe('board', function() {
+    it('should have a board', function() {
+      expect(game.board).toBeInstanceOf(Array)
+    })
+  })
 });
