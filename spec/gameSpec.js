@@ -5,9 +5,13 @@ describe('Game', function() {
     name: 'Player 1',
     sign: 'X'
   }
+  var playerTwo = {
+    name: 'Player 2',
+    sign: 'O'
+  }
 
   beforeEach(function() {
-    game = new Game(playerOne);
+    game = new Game(playerOne, playerTwo);
   });
 
   describe('turn', function() {
@@ -20,11 +24,17 @@ describe('Game', function() {
     });
   });
 
-  describe('player', function() {
-    it('should have a player', function() {
+  describe('players', function() {
+    it('should have a playerOne', function() {
       expect(game.playerOne).toEqual(playerOne)
       expect(game.playerOne.name).toEqual('Player 1')
       expect(game.playerOne.sign).toEqual('X')
+    });
+
+    it('should have a playerTwo', function() {
+      expect(game.playerTwo).toEqual(playerTwo)
+      expect(game.playerTwo.name).toEqual('Player 2')
+      expect(game.playerTwo.sign).toEqual('O')
     });
   });
   
