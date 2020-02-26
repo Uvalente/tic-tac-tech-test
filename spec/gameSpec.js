@@ -21,7 +21,7 @@ describe('Game', function() {
     });
   
     it('can increment turn', function() {
-      expect(game.changeTurn()).toEqual(1);
+      expect(game.changeTurn()).toEqual(playerTwo);
     });
   });
 
