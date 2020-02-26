@@ -15,5 +15,14 @@ describe('Rule', function() {
     
       expect(rule.winner(board)).toEqual('X')
     })
+
+    it('declare a winner if a row has three equal O', function() {
+      board = [
+        ['X', '', 'X'],
+        ['O', 'O', 'O'],
+        ['', '', '']]
+    
+      expect(rule.winner(board)).toEqual('O')
+    })
   })
 })
