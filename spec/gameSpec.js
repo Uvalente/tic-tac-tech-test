@@ -67,5 +67,12 @@ describe('Game', function() {
       game.changeTurn()
       expect(game.insertMove(1, 0)).toEqual('X')
     })
+
+    it('throw an error if inserting a move in a not empty space', function() {
+      game.insertMove(2, 2)
+      expect( function() {
+        game.insertMove(2, 2)
+      }).toThrowError('Space filled')
+    })
   })
 });
