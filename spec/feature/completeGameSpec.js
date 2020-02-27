@@ -38,4 +38,21 @@ describe('Complete Game', function() {
     })
   })
 
+  describe('no winner', function() {
+    it('declare game over if there are no free spaces nor winner', function() {
+      game.insertMove(0, 0)
+      game.insertMove(0, 1)
+      game.insertMove(0, 2)
+      game.insertMove(1, 1)
+      game.insertMove(1, 0)
+      game.insertMove(1, 2)
+      game.insertMove(2, 1)
+      game.insertMove(2, 0)
+      game.insertMove(2, 2)
+      expect( function() {
+        game.insertMove(0, 0)
+      }).toThrowError('The game is over')
+    })
+  })
+
 })

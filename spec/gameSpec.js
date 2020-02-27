@@ -9,10 +9,13 @@ describe('Game', function() {
     name: 'Player 2',
     sign: 'O'
   }
-  var board = [
+  var board = {
+    board: [
     ['', '', ''],
     ['', '', ''],
-    ['', '', '']]
+    ['', '', '']],
+    isFull: () => false
+    }
 
   beforeEach(function() {
     game = new Game(playerOne, playerTwo, board);
