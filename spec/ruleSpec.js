@@ -73,5 +73,25 @@ describe('Rule', function() {
   
         expect(rule.winner(board)).toEqual('X')
     })
+
+    it('declare a winner if second diagonal has three equal O', function() {
+      board = [
+        ['X', 'X', 'O'],
+        ['', 'O', ''],
+        ['O', 'O', 'X']]
+  
+        expect(rule.winner(board)).toEqual('O')
+    })
+  })
+
+  describe('no wins', function() {
+    it('does not have a winner on an empty board', function() {
+      board = [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']]
+
+        expect(rule.winner(board)).toBeUndefined()
+    })
   })
 })
