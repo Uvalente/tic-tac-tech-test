@@ -25,6 +25,17 @@ describe('Rule', function() {
       expect(rule.winner(board)).toEqual('O')
     })
 
+    it('declare a winner if a row has three equal O', function() {
+      board = [
+        ['X', '', 'X'],
+        ['O', '', 'O'],
+        ['X', 'X', 'X']]
+
+      expect(rule.winner(board)).toEqual('X')
+    })
+  })
+  
+  describe('column wins', function() {
     it('declare a winner if a column has three equal X', function() {
       board = [
         ['X', '', 'X'],
@@ -33,7 +44,7 @@ describe('Rule', function() {
       
       expect(rule.winner(board)).toEqual('X')
     })
-
+  
     it('declare a winner if a column has three equal )', function() {
       board = [
         ['X', '', 'O'],
@@ -41,6 +52,15 @@ describe('Rule', function() {
         ['X', '', 'O']]
       
       expect(rule.winner(board)).toEqual('O')
+    })
+
+    it('declare a winner if a column has three equal )', function() {
+      board = [
+        ['X', 'X', 'O'],
+        ['', 'X', ''],
+        ['X', 'X', 'O']]
+      
+      expect(rule.winner(board)).toEqual('X')
     })
   })
 })
