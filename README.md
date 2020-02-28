@@ -1,4 +1,5 @@
 # Tic Tac Toe Tech Test
+[![Maintainability](https://api.codeclimate.com/v1/badges/a2a8bbf876f6e3ed0ceb/maintainability)](https://codeclimate.com/github/Uvalente/tic-tac-tech-test/maintainability)
 
 On week 10 of Makers Academy we are tasked with completing differents tech tests, on a 1.5 days time limit.
 
@@ -52,7 +53,7 @@ The Game function injects two standard players, the board and the rules.
 Inserting a move on the board, auto-select the right player, increase the turn counter and announce the winning player if one is present.
 There are in place different guard clauses for the game over and space filled.
 
-## T&C
+## License
 
 Feel free to use this logic to implement a visual game of Tic Tac Toe in your browser.
 
